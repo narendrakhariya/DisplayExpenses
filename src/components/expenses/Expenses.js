@@ -4,13 +4,16 @@ import ExpensesFilter from "../expenses-filter/ExpensesFilter";
 import "./Expenses.css";
 
 const Expenses = (props) => {
-  const [selectedYear, setSelectedYear] = useState("");
+  const [selectedYear, setSelectedYear] = useState("2023");
   const expenseYearOnChange = (expenseYear) => {
     setSelectedYear(expenseYear);
   };
   return (
     <div className="expenses">
-      <ExpensesFilter expenseYearOnChange={expenseYearOnChange} />
+      <ExpensesFilter
+        selectedValue={selectedYear}
+        expenseYearOnChange={expenseYearOnChange}
+      />
       {props.expenses.map((expense) => (
         <ExpenseItem
           key={expense.id}
