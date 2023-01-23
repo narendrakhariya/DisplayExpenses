@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ExpenseItem from "../expense-item/ExpenseItem";
 import ExpensesFilter from "../expenses-filter/ExpensesFilter";
+import Card from "../ui/card/Card";
 import "./Expenses.css";
 
 const Expenses = (props) => {
@@ -9,7 +10,7 @@ const Expenses = (props) => {
     setSelectedYear(expenseYear);
   };
   return (
-    <div className="expenses">
+    <Card className="expenses">
       <ExpensesFilter
         selectedValue={selectedYear}
         expenseYearOnChange={expenseYearOnChange}
@@ -22,7 +23,7 @@ const Expenses = (props) => {
           amount={expense.amount}
         />
       ))}
-    </div>
+    </Card>
   );
 };
 
